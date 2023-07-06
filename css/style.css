@@ -5,3 +5,108 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* GENERAL */
+
+a{
+    text-decoration: none;
+}
+
+
+/* MAIN */
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+main > #first-section {
+    width: 100%;
+    height: 10%;
+    background-color: #009688;
+}
+
+main > #second-section {
+    width: 100%;
+    height: calc(100% - 10%);
+    background-color: #D9D1CB;
+}
+
+
+/* my container */
+
+.my-container {
+    width: 1300px;
+    height: 690px;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    left: 120px;
+    display: flex;
+}
+
+.my-container > #left-side {
+    width: 35%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.my-container > #right-side {
+    width: calc(100% - 35%);
+    height: 100%;
+}
+
+
+.image-container {
+    width: 50px;
+    height: 50px;
+}
+
+.image-container > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+/* left side */
+
+/* left side header */
+
+#left-side > header {
+    background-color: #EAEAEA;
+}
+
+#left-side header a  {
+    color: #999a9a;
+}
+
+/* left side notif-section */
+
+#notif-section {
+    background-color: #8EDAFC;
+}
+
+#bell-background{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: #8EDAFC;
+}
+
+#bell-background > * {
+    line-height: 30px;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+#notif-section a {
+    text-decoration: underline;
+    color:#5d5d5d;
+    font-size: small;
+}
+
