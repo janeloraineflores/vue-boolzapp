@@ -88,7 +88,7 @@
                             </div>
 
                             <ul class="list-unstyled my-3">
-                                <li v-for="(singleContact, index) in contacts" class="d-flex align-items-center mb-2">
+                                <li v-for="(singleContact, index) in contacts" class="d-flex align-items-center mb-2" @click="changeContact(index)">
                                     <div class="image-container">
                                         <img :src="singleContact.avatar">
                                     </div>
@@ -106,16 +106,16 @@
                 </section>
 
                 <!-- right side-->
-                <section id="right-side">
+                <section id="right-side" >
 
                     <header class="py-2 ps-2 d-flex justify-content-between align-items-center">
 
                        <div class="d-flex align-items-center">
                             <div class="image-container">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="contacts[currentActive].avatar" >
                             </div>
                             <div class="ms-2">
-                                Michele
+                                {{contacts[currentActive].name}}
                                 <br>
                                 <small class="p-0">
                                     Ultimo accesso oggi alle 17.00
@@ -136,31 +136,31 @@
 
                     </header>
 
-                    <main class="d-flex flex-column px-5 pt-4 pb-5">
+                    <main class="d-flex flex-column px-5 pt-4 pb-5" >
 
-                        <div class="message-sent align-self-end p-2 rounded-1 mb-3">
-                            {{contacts[0].messages[0].message}}
+                         <div class="message-sent align-self-end p-2 rounded-1 mb-3">
+                            {{contacts[currentActive].messages[0].message}}
                             <br>
                             <small>
-                                {{contacts[0].messages[0].date}}
+                                {{contacts[currentActive].messages[0].date}}
                             </small>
                         </div>
 
                         <div class="message-sent align-self-end p-2 rounded-1">
-                            {{contacts[0].messages[1].message}}
+                            {{contacts[currentActive].messages[1].message}}
                             <br>
                             <small>
-                                {{contacts[0].messages[1].date}}
+                                {{contacts[currentActive].messages[1].date}}
                             </small>
                         </div>
                         <div class="message-received align-self-start p-2 bg-light rounded-1">
-                            {{contacts[0].messages[2].message}}
+                            {{contacts[currentActive].messages[2].message}}
                             <br>
                             <small>
-                                {{contacts[0].messages[2].date}}
+                                {{contacts[currentActive].messages[2].date}}
                             </small>
                         </div>
-                 
+
                     </main>
 
                     <footer class="d-flex justify-content-between px-3 py-1">

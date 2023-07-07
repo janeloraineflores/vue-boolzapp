@@ -3,6 +3,11 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+
+      currentActive: 0,
+
+      
+
       contacts: [
         {
         name: 'Michele',
@@ -170,6 +175,16 @@ createApp({
           ]
       
       }  
+  },
+
+  methods: {
+
+    changeContact(i) {
+     
+      console.log('clikkato', i)
+      this.currentActive = i;
+      
+    }
   }
 }).mount('#app')
 
