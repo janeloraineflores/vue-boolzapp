@@ -118,8 +118,19 @@
     height: 10%;
 }
 
-.message-sent {
+.sent {
     background-color:  #d5f9ba;
+    align-self: end;
+}
+
+.received{
+    background-color: white;
+    align-self: start;
+}
+
+.date {
+    font-size: 10px;
+    text-align: right;
 }
 
 #right-side small {

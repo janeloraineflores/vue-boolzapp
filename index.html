@@ -88,12 +88,15 @@
                             </div>
 
                             <ul class="list-unstyled my-3">
-                                <li v-for="(singleContact, index) in contacts" class="d-flex align-items-center mb-2" @click="changeContact(index)">
+                                <li v-for="(singleContact, index) in contacts" class="d-flex align-items-center my-2 ps-2" @click="changeContact(index)">
                                     <div class="image-container">
                                         <img :src="singleContact.avatar">
                                     </div>
                                     <div>
                                         {{singleContact.name}}
+                                        <div class="date">
+                                            Ultimo messaggio inviato
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -116,10 +119,9 @@
                             </div>
                             <div class="ms-2">
                                 {{contacts[currentActive].name}}
-                                <br>
-                                <small class="p-0">
+                                <div class="date">
                                     Ultimo accesso oggi alle 17.00
-                                </small>
+                                </div>
                             </div>
                        </div>
                        <div>
@@ -136,13 +138,15 @@
 
                     </header>
 
-                    <main class="d-flex flex-column px-5 pt-4 pb-5" >
+                    <main class="d-flex flex-column px-5 pt-4 pb-5"  >
 
-                        <div class="message-sent align-self-end p-2 rounded-1 mb-3" v-for="(message, index) in contacts[currentActive].messages">
-                            {{contacts[currentActive].messages[0].message}}
-                            
+                        <div class="mb-3 p-2 rounded-2" v-for="(message, index) in contacts[currentActive].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
+                            {{contacts[currentActive].messages[index].message}}
+                            <div class="date">
+                                {{contacts[currentActive].messages[index].date}}
+                            </div>
                         </div>
-
+                       
                         
 
                     </main>
