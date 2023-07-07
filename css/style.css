@@ -77,7 +77,7 @@
 }
 
 #bell-background > * {
-    line-height: 30px;
+    line-height: 35px;
     padding-left: 12px;
     cursor: pointer;
 }
@@ -85,6 +85,10 @@
 #notif-section a {
     color:#5d5d5d;
     font-size: small;
+}
+
+#convo-section {
+    overflow-y: scroll;
 }
 
 #convo-section input {
@@ -105,7 +109,8 @@
 }
 
 #right-side > main {
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    overflow-y: scroll;
 }
 
 #right-side footer {
@@ -125,4 +130,9 @@
 
 #right-side main {
     height: 80%;
+}
+
+
+footer a {
+    font-size: large;
 }

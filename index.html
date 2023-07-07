@@ -138,18 +138,26 @@
 
                     <main class="d-flex flex-column px-5 pt-4 pb-5">
 
-                        <div class="message-sent align-self-end p-2 rounded-1">
-                            Messaggio inviato
+                        <div class="message-sent align-self-end p-2 rounded-1 mb-3">
+                            {{contacts[0].messages[0].message}}
                             <br>
-                            <small class="me-5">
-                                15:36
+                            <small>
+                                {{contacts[0].messages[0].date}}
+                            </small>
+                        </div>
+
+                        <div class="message-sent align-self-end p-2 rounded-1">
+                            {{contacts[0].messages[1].message}}
+                            <br>
+                            <small>
+                                {{contacts[0].messages[1].date}}
                             </small>
                         </div>
                         <div class="message-received align-self-start p-2 bg-light rounded-1">
-                            Messaggio ricevuto
+                            {{contacts[0].messages[2].message}}
                             <br>
-                            <small class="me-5">
-                                15:36
+                            <small>
+                                {{contacts[0].messages[2].date}}
                             </small>
                         </div>
                  
@@ -157,11 +165,11 @@
 
                     <footer class="d-flex justify-content-between px-3 py-1">
 
-                        <a href="#" >
+                        <a href="#" class="py-3" >
                             <i class="bi bi-emoji-smile"></i>
                         </a>
                         <input type="text" name="" id="" class="flex-grow-1 mx-3 border-0 rounded-1 ps-2" placeholder="Scrivi un messaggio">
-                        <a href="#">
+                        <a href="#" class="py-3">
                             <i class="bi bi-mic-mute-fill"></i>
                         </a>
 
