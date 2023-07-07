@@ -181,7 +181,6 @@ createApp({
 
     changeContact(i) {
      
-      console.log('clikkato', i)
       this.currentActive = i;
       
     }

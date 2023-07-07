@@ -138,28 +138,12 @@
 
                     <main class="d-flex flex-column px-5 pt-4 pb-5" >
 
-                         <div class="message-sent align-self-end p-2 rounded-1 mb-3">
+                        <div class="message-sent align-self-end p-2 rounded-1 mb-3" v-for="(message, index) in contacts[currentActive].messages">
                             {{contacts[currentActive].messages[0].message}}
-                            <br>
-                            <small>
-                                {{contacts[currentActive].messages[0].date}}
-                            </small>
+                            
                         </div>
 
-                        <div class="message-sent align-self-end p-2 rounded-1">
-                            {{contacts[currentActive].messages[1].message}}
-                            <br>
-                            <small>
-                                {{contacts[currentActive].messages[1].date}}
-                            </small>
-                        </div>
-                        <div class="message-received align-self-start p-2 bg-light rounded-1">
-                            {{contacts[currentActive].messages[2].message}}
-                            <br>
-                            <small>
-                                {{contacts[currentActive].messages[2].date}}
-                            </small>
-                        </div>
+                        
 
                     </main>
 
