@@ -6,7 +6,7 @@ createApp({
 
       currentActive: 0,
 
-      
+      newMessage : '',
 
       contacts: [
         {
@@ -183,7 +183,16 @@ createApp({
      
       this.currentActive = i;
       
-    }
+    },
+
+    addMessage() {
+      
+      if (this.newMessage.length > 0) {
+          this.contacts.push({name: 'Jane',avatar: '', visible: true, messages: [{date:'10/01/2020 15:51:00', message: this.newMessage, status: 'sent'}]});
+          this.newMessage = '';
+          console.log(this.contacts)
+      }
+  }
   }
 }).mount('#app')
 
