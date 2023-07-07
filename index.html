@@ -23,77 +23,153 @@
     <div id="app">
 
         <!-- main -->
-        <main>
-
-            <!-- first section main-->
-            <section id="first-section">
-
-            </section>
-
-            <!-- second section main-->
-            <section id="second-section">
+        <main class="my-main">
                 
-                <!-- my container -->
-                <div class="my-container">
+            <!-- my container -->
+            <div class="my-container py-5 d-flex">
+                
+                <!-- left-side-->
+                <section id="left-side">
                     
-                    <section id="left-side">
-                        
-                        <!-- header left side-->
-                        <header class="d-flex justify-content-between align-items-center py-2 ps-2">
+                    <!-- header left side-->
+                    <header class="d-flex justify-content-between align-items-center py-2 ps-2">
 
-                            <div class="d-flex align-items-center">
-                                <div class="image-container">
-                                    <img src="img/avatar_io.jpg" alt="">
-                                </div>
-                                <span class="ms-2">
-                                    <a href="#" class="text-black">
-                                        Jane
+                        <div class="d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="img/avatar_io.jpg" alt="">
+                            </div>
+                            <span class="ms-2">
+                                <a href="#" class="text-black text-decoration-none">
+                                    Jane
+                                </a>
+                            </span>
+                        </div>
+                       
+                        <div>
+                            <a href="#" class="mx-2">
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </a>
+                            <a href="#" class="mx-2">
+                                <i class="bi bi-chat-left-fill"></i>
+                            </a>
+                            <a href="#" class="mx-2">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </a>
+                        </div>
+
+                    </header>
+
+                    <!-- main left side-->
+                    <main>
+
+                        <section id="notif-section" class="ps-2 py-2 d-flex">
+
+                            <div id="bell-background">
+                                <i class="bi bi-bell-slash-fill"></i> 
+                            </div>
+                            <span class="ms-2">
+                                Ricevi notifiche di nuovi messaggi
+                                <small>
+                                    <a href="#" class="d-block">
+                                        Attiva notifiche desktop
                                     </a>
+                                </small>
+                            </span>
+
+                        </section>  
+
+                        <section id="convo-section">
+
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">
+                                    <i class="bi bi-search"></i>
                                 </span>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
 
-                            <div>
-                                <a href="#" class="mx-2">
-                                    <i class="fa-solid fa-circle-notch"></i>
-                                </a>
-                                <a href="#" class="mx-2">
-                                    <i class="bi bi-chat-left-fill"></i>
-                                </a>
-                                <a href="#" class="mx-2">
-                                    <i class="bi bi-three-dots-vertical"></i>
-                                </a>
+                            <ul class="list-unstyled my-3">
+                                <li v-for="(singleContact, index) in contacts" class="d-flex align-items-center mb-2">
+                                    <div class="image-container">
+                                        <img :src="singleContact.avatar">
+                                    </div>
+                                    <div>
+                                        {{singleContact.name}}
+                                    </div>
+                                </li>
+                            </ul>
+                            
+
+                        </section>
+
+                    </main>
+
+                </section>
+
+                <!-- right side-->
+                <section id="right-side">
+
+                    <header class="py-2 ps-2 d-flex justify-content-between align-items-center">
+
+                       <div class="d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="img/avatar_1.jpg" alt="">
                             </div>
+                            <div class="ms-2">
+                                Michele
+                                <br>
+                                <small class="p-0">
+                                    Ultimo accesso oggi alle 17.00
+                                </small>
+                            </div>
+                       </div>
+                       <div>
+                            <a href="#" class="text-decoration-none me-2 ">
+                                <i class="bi bi-search"></i>
+                            </a>
+                            <a href="#" class="text-decoration-none me-2">
+                                <i class="bi bi-link-45deg"></i>
+                            </a>
+                            <a href="#" class="text-decoration-none ">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </a>
+                       </div>
 
-                        </header>
+                    </header>
 
-                        <main>
+                    <main class="d-flex flex-column px-5 pt-4 pb-5">
 
-                            <section id="notif-section" class="ps-2 py-2 d-flex">
+                        <div class="message-sent align-self-end p-2 rounded-1">
+                            Messaggio inviato
+                            <br>
+                            <small class="me-5">
+                                15:36
+                            </small>
+                        </div>
+                        <div class="message-received align-self-start p-2 bg-light rounded-1">
+                            Messaggio ricevuto
+                            <br>
+                            <small class="me-5">
+                                15:36
+                            </small>
+                        </div>
+                 
+                    </main>
 
-                                <div id="bell-background">
-                                    <i class="bi bi-bell-slash-fill"></i> 
-                                </div>
-                                <span class="ms-2">
-                                    Ricevi notifiche di nuovi messaggi
-                                    <small>
-                                        <a href="#" class="d-block">
-                                            Attiva notifiche desktop
-                                        </a>
-                                    </small>
-                                </span>
+                    <footer class="d-flex justify-content-between px-3 py-1">
 
-                            </section>  
-                        </main>
+                        <a href="#" >
+                            <i class="bi bi-emoji-smile"></i>
+                        </a>
+                        <input type="text" name="" id="" class="flex-grow-1 mx-3 border-0 rounded-1 ps-2" placeholder="Scrivi un messaggio">
+                        <a href="#">
+                            <i class="bi bi-mic-mute-fill"></i>
+                        </a>
 
-                    </section>
+                    </footer>
 
-                    <section id="right-side">
-                        right
-                    </section>
+                </section>
 
-                </div>
-
-            </section>
+            </div>
 
         </main>
 

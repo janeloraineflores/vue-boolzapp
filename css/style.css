@@ -7,49 +7,29 @@
 }
 
 
-/* GENERAL */
-
-a{
-    text-decoration: none;
-}
-
-
 /* MAIN */
 
-main {
+.my-main {
     width: 100%;
     height: 100vh;
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 19%, rgba(227,219,213,1) 19%););
 }
 
-main > #first-section {
-    width: 100%;
-    height: 10%;
-    background-color: #009688;
-}
-
-main > #second-section {
-    width: 100%;
-    height: calc(100% - 10%);
-    background-color: #D9D1CB;
-}
 
 
 /* my container */
 
 .my-container {
-    width: 1300px;
-    height: 690px;
+    width: 1200px;
+    height: 100%;
     margin: 0 auto;
-    position: absolute;
-    top: 30px;
-    left: 120px;
-    display: flex;
 }
 
 .my-container > #left-side {
     width: 35%;
-    height: 100%;
     background-color: #FFFFFF;
+    height: 100%
 }
 
 .my-container > #right-side {
@@ -74,7 +54,6 @@ main > #second-section {
 
 /* left side */
 
-/* left side header */
 
 #left-side > header {
     background-color: #EAEAEA;
@@ -84,7 +63,6 @@ main > #second-section {
     color: #999a9a;
 }
 
-/* left side notif-section */
 
 #notif-section {
     background-color: #8EDAFC;
@@ -105,8 +83,46 @@ main > #second-section {
 }
 
 #notif-section a {
-    text-decoration: underline;
     color:#5d5d5d;
     font-size: small;
 }
 
+#convo-section input {
+    width: 100%;
+    font-size: small;
+}
+
+
+/* right side */
+
+#right-side header {
+    background-color:#EAEAEA;
+    height: 10%;
+}
+
+#right-side a{
+    color: #5d5d5d;
+}
+
+#right-side > main {
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')
+}
+
+#right-side footer {
+    background-color: #DAD2CC;
+    height: 10%;
+}
+
+.message-sent {
+    background-color:  #d5f9ba;
+}
+
+#right-side small {
+    font-size: 10px;
+    padding-left: 100px;
+}
+
+
+#right-side main {
+    height: 80%;
+}
