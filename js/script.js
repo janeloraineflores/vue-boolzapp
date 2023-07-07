@@ -188,11 +188,14 @@ createApp({
     addMessage() {
       
       if (this.newMessage.length > 0) {
-          this.contacts.push({name: 'Jane',avatar: '', visible: true, messages: [{date:'10/01/2020 15:51:00', message: this.newMessage, status: 'sent'}]});
-          this.newMessage = '';
-          console.log(this.contacts)
+        this.contacts[this.currentActive].messages.push({date:'10/01/2020 15:51:00', message: this.newMessage, status: 'sent'});
+        this.newMessage = '';
+        setTimeout(() => {
+          this.contacts[this.currentActive].messages.push({date:'10/01/2020 15:52:00', message: 'ok', status: 'received'});;
+    
+        }, 1000);
       }
-  }
+    }
   }
 }).mount('#app')
 
