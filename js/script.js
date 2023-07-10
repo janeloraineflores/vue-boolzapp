@@ -8,6 +8,8 @@ createApp({
 
       newMessage : '',
 
+      name : '',
+
       contacts: [
         {
         name: 'Michele',
@@ -171,7 +173,8 @@ createApp({
                           status: 'received'
                           }
                         ]
-              }
+              },
+              
           ]
       
       }  
@@ -191,10 +194,15 @@ createApp({
         this.contacts[this.currentActive].messages.push({date:'10/01/2020 15:51:00', message: this.newMessage, status: 'sent'});
         this.newMessage = '';
         setTimeout(() => {
-          this.contacts[this.currentActive].messages.push({date:'10/01/2020 15:52:00', message: 'ok', status: 'received'});;
+          this.contacts[this.currentActive].messages.push({date:'10/01/2020 15:52:00', message: 'Ok', status: 'received'});;
     
         }, 1000);
       }
+    },
+
+    searchContact() {
+      let searchLowered = this.searchContact.toLowerCase()
+      console.log(searchLowered)
     }
   }
 }).mount('#app')
