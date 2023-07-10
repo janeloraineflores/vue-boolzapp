@@ -219,6 +219,10 @@ createApp({
         
       });
     
+    },
+
+    deleteMessage(i) {
+      this.contacts[this.currentActive].messages.splice(i, 1)
     }
   }
   

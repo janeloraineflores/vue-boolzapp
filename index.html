@@ -140,13 +140,20 @@
 
                     </header>
 
-                    <main class="d-flex flex-column px-5 pt-4 pb-5"  >
+                    <main>
 
-                        <div class="mb-3 p-2 rounded-2" v-for="(message, index) in contacts[currentActive].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
-                            {{contacts[currentActive].messages[index].message}}
-                            <div class="date">
-                                {{contacts[currentActive].messages[index].date}}
-                            </div>
+                        <div class="dropdown d-flex flex-column px-5 pt-4 pb-5">
+                            <button class="border-0 dropdown-toggle mb-3 rounded-2 p-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" v-for="(message, index) in contacts[currentActive].messages" :class="message.status == 'sent' ? 'sent' : 'received'" >
+                                {{contacts[currentActive].messages[index].message}}
+                                <div class="date">
+                                    {{contacts[currentActive].messages[index].date}}
+                                </div>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" type="button">Message info</a></li>
+                                    <li><a class="dropdown-item" href="#"type="button" @click.prevent="deleteMessage()">Delete message</a></li>
+                                </ul>
+                            </button>
+                            
                         </div>
                        
                         
@@ -167,6 +174,9 @@
 
                     </footer>
 
+                    
+
+
                 </section>
 
             </div>
@@ -176,6 +186,7 @@
     </div>
     
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
