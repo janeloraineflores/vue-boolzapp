@@ -87,8 +87,9 @@
     font-size: small;
 }
 
-#convo-section {
-    overflow-y: scroll;
+#convo-section ul {
+    height: 450px;
+    overflow-y: scroll
 }
 
 #convo-section input {

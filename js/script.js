@@ -201,10 +201,20 @@ createApp({
     },
 
     searchContact() {
-      let searchLowered = this.searchContact.toLowerCase()
-      console.log(searchLowered)
+      let searchLowered = this.name.toLowerCase();
+      console.log( searchLowered);
+
+      this.contacts.forEach((contact) => {
+
+        let loweredName = contact.name.toLowerCase();
+
+        if (! loweredName.includes(searchLowered)) {
+          contact[i].visible = false;
+        }
+        
+      });
+    
     }
   }
 }).mount('#app')
-
 

@@ -80,22 +80,24 @@
 
                         <section id="convo-section">
 
-                            <div class="input-group flex-nowrap">
+                            <div class="input-group flex-nowrap" >
                                 <span class="input-group-text" id="addon-wrapping">
                                     <i class="bi bi-search"></i>
                                 </span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping" v-model="name" @keyup.enter="searchContact()">
                             </div>
 
-                            <ul class="list-unstyled my-3">
-                                <li v-for="(singleContact, index) in contacts" class="d-flex align-items-center my-2 ps-2" @click="changeContact(index)" v-if="singleContact.visible">
-                                    <div class="image-container">
-                                        <img :src="singleContact.avatar">
-                                    </div>
-                                    <div>
-                                        {{singleContact.name}}
-                                        <div class="date">
-                                            Ultimo messaggio inviato
+                            <ul class="list-unstyled "  >
+                                <li v-for="(singleContact, index) in contacts"  @click="changeContact(index)">
+                                    <div v-if="singleContact.visible"class="d-flex align-items-center my-3 mx-2">
+                                        <div class="image-container">
+                                            <img :src="singleContact.avatar">
+                                        </div>
+                                        <div>
+                                            {{singleContact.name}}
+                                            <div class="date">
+                                                Ultimo messaggio inviato
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
