@@ -242,10 +242,6 @@ createApp({
     
     },
 
-    deleteMessage(index) {
-      this.contacts[this.currentActive].messages.splice(index, 1)
-    },
-
     toggle(index) {
     
       if(this.contacts[this.currentActive].messages[index].isDropped == false){
@@ -255,7 +251,11 @@ createApp({
             this.contacts[this.currentActive].messages[index].isDropped = false;
       }
 
-    } 
+    },
+
+    deleteMessage(index) {
+      this.contacts[this.currentActive].messages.splice(index, 1)
+    },
 
   }
   
