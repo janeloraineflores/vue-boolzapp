@@ -248,11 +248,15 @@ createApp({
 
     toggle(index) {
     
-      this.contacts[this.currentActive].messages[index].isDropped = ! this.contacts[this.currentActive].messages[index].isDropped
+      if(this.contacts[this.currentActive].messages[index].isDropped == false){
+            this.contacts[this.currentActive].messages[index].isDropped = true;
+      } 
+      else {
+            this.contacts[this.currentActive].messages[index].isDropped = false;
+      }
 
-    },
+    } 
 
-   
   }
   
 }).mount('#app')
