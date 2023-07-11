@@ -140,28 +140,26 @@
 
                     </header>
 
-                    <main>
+                    <main class="d-flex flex-column px-5 pt-4">
 
-                        <div class=" d-flex flex-column px-5 pt-4 pb-5">
-
-                            <button class="border-0  mb-3 rounded-2 p-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" v-for="(message, index) in contacts[currentActive].messages" :class="message.status == 'sent' ? 'sent' : 'received'"  >
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" >Message info</a></li>
-                                    <li><a class="dropdown-item" @click="deleteMessage(index)" >Delete message</a></li>
-                                </ul>
-                                <div >
-                                    {{contacts[currentActive].messages[index].message}}
-                                </div>
-                                
-                                <div class="date">
-                                    {{contacts[currentActive].messages[index].date}}
-                                </div>
-                            </button>
-                            
+                        <div class="message mb-3 rounded-2 p-2" v-for="(message, index) in contacts[currentActive].messages" :class="message.status == 'sent' ? 'sent' : 'received'"  @click="toggle(index)" >
+                            {{contacts[currentActive].messages[index].message}}
+                            <div class="date">
+                                {{contacts[currentActive].messages[index].date}}
+                            </div>
+                            <ul id="dropdown" :class="(contacts[currentActive].messages[index].isDropped) ? '' : 'hidden'">
+                                <li>
+                                    Message info
+                                </li>
+                                <li @click="deleteMessage(index)">
+                                    Delete message
+                                </li>
+                            </ul>
+                          
                         </div>
-                       
-                        
 
+                        
+            
                     </main>
 
                     <footer class="d-flex justify-content-between px-3 py-1">
@@ -178,7 +176,6 @@
 
                     </footer>
 
-                  
                     
 
 

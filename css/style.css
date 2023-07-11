@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: pointer;
 }
 
 
@@ -57,15 +56,18 @@
 
 #left-side > header {
     background-color: #EAEAEA;
+    
 }
 
 #left-side header a  {
     color: #999a9a;
+    cursor: pointer;
 }
 
 
 #notif-section {
     background-color: #8EDAFC;
+    cursor: pointer;
 }
 
 #bell-background{
@@ -85,16 +87,19 @@
 #notif-section a {
     color:#5d5d5d;
     font-size: small;
+    cursor: pointer;
 }
 
 #convo-section ul {
     height: 450px;
-    overflow-y: scroll
+    overflow-y: scroll;
+    cursor: pointer;
 }
 
 #convo-section input {
     width: 100%;
     font-size: small;
+    cursor: pointer;
 }
 
 
@@ -107,6 +112,7 @@
 
 #right-side a{
     color: #5d5d5d;
+    cursor: pointer;
 }
 
 #right-side main {
@@ -122,11 +128,13 @@
 .sent {
     background-color:  #d5f9ba;
     align-self: end;
+    cursor: pointer;
 }
 
 .received{
     background-color: white;
     align-self: start;
+    cursor: pointer;
 }
 
 .date {
@@ -147,6 +155,34 @@
 
 footer a {
     font-size: large;
+    cursor: pointer;
 }
 
+footer input {
+    cursor: pointer;
+}
+
+.message {
+    position: relative;
+}
+
+#dropdown {
+    width: 80px;
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    z-index: 1;
+    position: absolute;
+    bottom: -80px;
+    right: 0
+   
+}
+
+#dropdown > *:hover {
+    background-color: #5d5d5d2e;
+}
+
+.hidden {
+    display:  none;
+  }
 
