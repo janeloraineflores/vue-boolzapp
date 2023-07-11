@@ -142,16 +142,20 @@
 
                     <main>
 
-                        <div class="dropdown d-flex flex-column px-5 pt-4 pb-5">
-                            <button class="border-0 dropdown-toggle mb-3 rounded-2 p-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" v-for="(message, index) in contacts[currentActive].messages" :class="message.status == 'sent' ? 'sent' : 'received'" >
-                                {{contacts[currentActive].messages[index].message}}
+                        <div class=" d-flex flex-column px-5 pt-4 pb-5">
+
+                            <button class="border-0  mb-3 rounded-2 p-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" v-for="(message, index) in contacts[currentActive].messages" :class="message.status == 'sent' ? 'sent' : 'received'"  >
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" >Message info</a></li>
+                                    <li><a class="dropdown-item" @click="deleteMessage(index)" >Delete message</a></li>
+                                </ul>
+                                <div >
+                                    {{contacts[currentActive].messages[index].message}}
+                                </div>
+                                
                                 <div class="date">
                                     {{contacts[currentActive].messages[index].date}}
                                 </div>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#" type="button">Message info</a></li>
-                                    <li><a class="dropdown-item" href="#"type="button" @click.prevent="deleteMessage()">Delete message</a></li>
-                                </ul>
                             </button>
                             
                         </div>
@@ -174,6 +178,7 @@
 
                     </footer>
 
+                  
                     
 
 

@@ -221,8 +221,9 @@ createApp({
     
     },
 
-    deleteMessage(i) {
-      this.contacts[this.currentActive].messages.splice(i, 1)
+    deleteMessage(index) {
+      console.log('cancellato index', index)
+      this.contacts[this.currentActive].messages.splice(index, 1)
     }
   }
   

@@ -149,6 +149,4 @@ footer a {
     font-size: large;
 }
 
-.dropdown-toggle::after {
-    content: none;
-}
+
