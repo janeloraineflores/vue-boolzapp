@@ -88,7 +88,7 @@
                             </div>
 
                             <ul class="list-unstyled "  >
-                                <li v-for="(singleContact, index) in contacts"  @click="changeContact(index)">
+                                <li id="active" v-for="(singleContact, index) in contacts"  @click="changeContact(index)" >
                                     <div v-if="singleContact.visible"class="d-flex align-items-center my-3 mx-2">
                                         <div class="image-container">
                                             <img :src="singleContact.avatar">
@@ -96,7 +96,7 @@
                                         <div>
                                             {{singleContact.name}}
                                             <div class="date">
-                                                Ultimo messaggio inviato
+                                                {{singleContact.messages[1].message}}
                                             </div>
                                         </div>
                                     </div>

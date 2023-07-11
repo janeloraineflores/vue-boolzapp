@@ -247,10 +247,9 @@ createApp({
     },
 
     toggle(index) {
-
+    
       this.contacts[this.currentActive].messages[index].isDropped = ! this.contacts[this.currentActive].messages[index].isDropped
 
-      
     },
 
    

@@ -186,3 +186,7 @@ footer input {
     display:  none;
   }
 
+
+  #active:hover{
+    background-color: #5d5d5d3d;
+  }
